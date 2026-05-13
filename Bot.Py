@@ -70,6 +70,7 @@ def speak(text):
     engine1=pyttsx3.init()
     engine1.say(text)
     engine1.runAndWait()
+    engine1.stop()
 @bot.command()
 async def SOS(ctx):
     await ctx.send(help_textS)
@@ -80,6 +81,7 @@ async def fact(ctx):
     trad=trans.translate(dato,dest="es")
     await ctx.send(trad.text)
     await ctx.send(dato)
+    speak(trad)
 
 @bot.command()
 async def flip(ctx):
